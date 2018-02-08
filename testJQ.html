@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+     var i = 0;
+     var image1, image2;
+    $("img").click(function(){
+        flipImages(this);
+    });
+    
+    function flipImages(thisObj){
+        var imageID = $(thisObj).attr('id');
+        if(image1 == null){
+            image1 = thisObj;
+            i++;
+        }
+        else if(image1 == thisObj){
+           
+        }
+        else{
+            image2 = thisObj;
+            i++;
+        }
+        if(imageID == "img1" || imageID == "img7"){
+            $(thisObj).attr('src',"balloon.jpeg");
+        }
+        else if(imageID == "img3" || imageID == "img8"){
+            $(thisObj).attr('src',"cat.jpeg");
+        }
+        else if(imageID == "img2" || imageID == "img5"){
+            $(thisObj).attr('src',"lion.jpeg");
+        }
+        else if(imageID == "img4" || imageID == "img14"){
+            $(thisObj).attr('src',"flower.jpeg");
+        }
+        else if(imageID == "img6" || imageID == "img9"){
+            $(thisObj).attr('src',"minion.jpeg");
+        }
+        else if(imageID == "img10" || imageID == "img12"){
+            $(thisObj).attr('src',"dog.jpeg");
+        }
+        else if(imageID == "img11" || imageID == "img13"){
+            $(thisObj).attr('src',"cindrella.jpg");
+        }
+        else if(imageID == "img15" || imageID == "img16"){
+            $(thisObj).attr('src',"transformer.jpeg");
+        }
+        if(i == 2){
+            timeout();
+        }
+    }
+    function timeout(){
+         myVar = setTimeout(checkImages, 500);
+    }
+    
+    function checkImages(){
+        if($(image1).attr('src') == $(image2).attr('src')){
+            }
+            else{
+                $(image1).attr('src', "flip.png");
+                $(image2).attr('src',"flip.png");
+            }
+             i = 0;
+             image1 = null;
+             image2 = null;
+    }
+    
+});
+    
+</script> 
+</head>
+<body>
+
+<table align = center border="4">
+    <tr>
+     <td><img id = "img1" src = "flip.png"></td>
+     <td><img id = "img2" src = "flip.png"></td>
+     <td><img id = "img3" src = "flip.png"></td>
+     <td><img id = "img4" src = "flip.png"></td> 
+    </tr>
+    <tr>
+     <td><img id = "img5" src = "flip.png"></td>
+     <td><img id = "img6" src = "flip.png"></td>
+     <td><img id = "img7" src = "flip.png"></td>
+     <td><img id = "img8" src = "flip.png"></td> 
+    </tr>  
+     <tr>
+     <td><img id = "img9" src = "flip.png"></td>
+     <td><img id = "img10" src = "flip.png"></td>
+     <td><img id = "img11" src = "flip.png"></td>
+     <td><img id = "img12" src = "flip.png"></td> 
+    </tr>
+     <tr>
+     <td><img id = "img13" src = "flip.png"></td>
+     <td><img id = "img14" src = "flip.png"></td>
+     <td><img id = "img15" src = "flip.png"></td>
+     <td><img id = "img16" src = "flip.png"></td> 
+    </tr>
+    
+  </table> </body>
+</html>
