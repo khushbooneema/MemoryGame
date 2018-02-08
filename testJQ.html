@@ -11,6 +11,7 @@ $(document).ready(function(){
     });
     
     function flipImages(thisObj){
+        //alert("Present");
         var imageID = $(thisObj).attr('id');
         if(image1 == null){
             image1 = thisObj;
@@ -20,7 +21,7 @@ $(document).ready(function(){
            
         }
         else{
-            image2 = thisObj;
+           image2 = thisObj;
             i++;
         }
         if(imageID == "img1" || imageID == "img7"){
@@ -57,6 +58,8 @@ $(document).ready(function(){
     
     function checkImages(){
         if($(image1).attr('src') == $(image2).attr('src')){
+                $(image1).unbind("click");
+                $(image2).unbind("click");
             }
             else{
                 $(image1).attr('src', "flip.png");
